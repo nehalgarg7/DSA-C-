@@ -1,3 +1,5 @@
+// Two stack using one array
+
 #include <iostream>
 #include <stack>
 using namespace std;
