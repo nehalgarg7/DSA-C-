@@ -1,0 +1,51 @@
+class Solution {
+public:
+    int pivotIndex(vector<int>& nums) {
+        vector<int> left,right;
+        for(int i=0; i<nums.size();i++)
+        {
+            int sl = 0;
+            if(i==0)
+            {
+                left.push_back(0);
+            }
+            else 
+            {
+                for(int j=0; j<i ;j++)
+                {
+                     sl = sl + nums.at(j);
+                }
+                left.push_back(sl);
+            }
+        }
+
+        for(int i=nums.size()-1 ;i>=0 ;i--)
+        {
+            int sr =0;
+            if(i==nums.size()-1)
+            {
+                right.push_back(0);
+            }
+            else
+            {
+                for(int j=i+1 ;j<=nums.size()-1 ;j++)
+                {
+                    sr = sr + nums.at(j);
+                }
+                right.push_back(sr);
+            }
+        }
+
+        reverse(right.begin(),right.end());
+
+        for(int i=0 ;i<nums.size();i++)
+        {
+            if(left.at(i)==right.at(i))
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+};
