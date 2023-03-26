@@ -9,174 +9,87 @@
 // Only the chracters A C G T are repeated in the DNA.
 // */
 
-// #include <iostream>
-// #include <bits/stdc++.h>
-// using namespace std;
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
 
-
-// void ComputeLPSArray(string s2, int m, int* lps);
-
-
-// void KnuthMorrisPratt(string s1, string s2)
-// {
-//     int n = s1.size(), m = s2.size();
-
-//     int lps[m] = {0};
-
-//     ComputeLPSArray(s2, m, lps);
-
-//     int i = 0, j = 0;
-
-//     while ((n - i) >= (m - j))
-//     {
-//         if (s2[i] == s1[j])
-//         {
-//             i++;
-//             j++;
-//         }
-
-//         if (j == m)
-//         {
-//             cout << "Pattern found at: " << i - j << endl;
-//             j = lps[j - 1];
-//         }
-//         else if(i<n && s2[j] != s1[i])
-//         {
-//             if (j != 0)
-//             {
-//                 j = lps[j - 1];
-//             }
-//             else
-//             {
-//                 i++;
-//             }
-//         }
-//     }
-// }
-
-// void ComputeLPSArray(string s2, int m, int* lps)
-// {
-//     int len = 0;
-//     int i = 1;
-//     lps[0] = 0;
-//     while (i < m)
-//     {
-//         if (s2[i] == s2[len])
-//         {
-//             lps[i] = len + 1;
-//             len += 1;
-//             i++;
-//         }
-
-//         else
-//         {
-//             if (len != 0)
-//             {
-//                 len = lps[len - 1];
-//             }
-//             else
-//             {
-//                 lps[i] = 0;
-//                 i++;
-//             }
-//         }
-//     }
-// }
-// int main()
-// {
-//     string s1, s2;
-//     cin >> s1 >> s2;
-
-//     KnuthMorrisPratt(s1, s2);
-
-//     return 0;
-// }
-
-// C++ program for implementation of KMP pattern searching
-// algorithm
-#include <bits/stdc++.h>
-
-void computeLPSArray(char* pat, int M, int* lps);
-
-// Prints occurrences of txt[] in pat[]
-void KMPSearch(char* pat, char* txt)
+void computeLPSArray(string pattern, int m, int* lps)
 {
-	int M = strlen(pat);
-	int N = strlen(txt);
+    int len = 0 ; // Length of the previous longest prefix suffix
+    lps[0] = 0; // lps[0] is always 0
 
-	// create lps[] that will hold the longest prefix suffix
-	// values for pattern
-	int lps[M];
-
-	// Preprocess the pattern (calculate lps[] array)
-	computeLPSArray(pat, M, lps);
-
-	int i = 0; // index for txt[]
-	int j = 0; // index for pat[]
-	while ((N - i) >= (M - j)) {
-		if (pat[j] == txt[i]) {
-			j++;
-			i++;
-		}
-
-		if (j == M) {
-			printf("Found pattern at index %d ", i - j);
-			j = lps[j - 1];
-		}
-
-		// mismatch after j matches
-		else if (i < N && pat[j] != txt[i]) {
-			// Do not match lps[0..lps[j-1]] characters,
-			// they will match anyway
-			if (j != 0)
-				j = lps[j - 1];
-			else
-				i = i + 1;
-		}
-	}
+    // the loop calculates lps[i] for i = 1 to m-1
+    int i = 1;
+    while (i < m)
+    {
+        if (pattern[i] == pattern[len])
+        {
+            len++;
+            lps[i] = len;
+            i++;
+        }
+        else
+        {
+            if(len != 0)
+            {
+                len = lps[len -1];
+            }
+            else
+            {
+                lps[i] = 0;
+                i++;
+            }
+        }
+    }
 }
 
-// Fills lps[] for given pattern pat[0..M-1]
-void computeLPSArray(char* pat, int M, int* lps)
+void KunthMorissPrattSearch(string text,string pattern)
 {
-	// length of the previous longest prefix suffix
-	int len = 0;
+    int n = text.size();
+    int m = pattern.size();
 
-	lps[0] = 0; // lps[0] is always 0
+    int lps[m];
 
-	// the loop calculates lps[i] for i = 1 to M-1
-	int i = 1;
-	while (i < M) {
-		if (pat[i] == pat[len]) {
-			len++;
-			lps[i] = len;
-			i++;
-		}
-		else // (pat[i] != pat[len])
-		{
-			// This is tricky. Consider the example.
-			// AAACAAAA and i = 7. The idea is similar
-			// to search step.
-			if (len != 0) {
-				len = lps[len - 1];
+    computeLPSArray(pattern,m,lps);
 
-				// Also, note that we do not increment
-				// i here
-			}
-			else // if (len == 0)
-			{
-				lps[i] = 0;
-				i++;
-			}
-		}
-	}
+    int i=0; // index for txt[]
+    int j=0; // index for pat[]
+
+    while((n-i)>=(m-j))
+    {
+        if(pattern[j] == text[i])
+        {
+            j++;
+            i++;
+        }
+
+        if (j==m)
+        {
+            cout << "Pattern Found at the index :" << i-j<<endl;
+            j = lps [j-1];
+        }
+
+        // mismatch after j matches
+        else if (i<n && pattern[j] != text[i]) 
+        {
+            if (j !=0 )
+            {
+                j = lps[j-1];
+            }
+            else
+            {
+                i = i + 1;
+            }
+        }
+    }
+
 }
 
-// Driver code
 int main()
 {
-	char txt[] = "aabaababbabcd";
-	char pat[] = "ab";
-	KMPSearch(pat, txt);
-	return 0;
+    string text,pattern;
+    cout<< "Enter the text and pattern\n";
+    cin>>text>>pattern;
+
+    KunthMorissPrattSearch(text,pattern);
 }
