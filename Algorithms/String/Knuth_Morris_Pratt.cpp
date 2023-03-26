@@ -9,14 +9,14 @@
 // Only the chracters A C G T are repeated in the DNA.
 // */
 
-#include<iostream>
-#include<bits/stdc++.h>
+#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-void computeLPSArray(string pattern, int m, int* lps)
+void computeLPSArray(string pattern, int m, int *lps)
 {
-    int len = 0 ; // Length of the previous longest prefix suffix
-    lps[0] = 0; // lps[0] is always 0
+    int len = 0; // Length of the previous longest prefix suffix
+    lps[0] = 0;  // lps[0] is always 0
 
     // the loop calculates lps[i] for i = 1 to m-1
     int i = 1;
@@ -30,9 +30,9 @@ void computeLPSArray(string pattern, int m, int* lps)
         }
         else
         {
-            if(len != 0)
+            if (len != 0)
             {
-                len = lps[len -1];
+                len = lps[len - 1];
             }
             else
             {
@@ -43,38 +43,38 @@ void computeLPSArray(string pattern, int m, int* lps)
     }
 }
 
-void KunthMorissPrattSearch(string text,string pattern)
+void KunthMorissPrattSearch(string text, string pattern)
 {
     int n = text.size();
     int m = pattern.size();
 
     int lps[m];
 
-    computeLPSArray(pattern,m,lps);
+    computeLPSArray(pattern, m, lps);
 
-    int i=0; // index for txt[]
-    int j=0; // index for pat[]
+    int i = 0; // index for txt[]
+    int j = 0; // index for pat[]
 
-    while((n-i)>=(m-j))
+    while ((n - i) >= (m - j))
     {
-        if(pattern[j] == text[i])
+        if (pattern[j] == text[i])
         {
             j++;
             i++;
         }
 
-        if (j==m)
+        if (j == m)
         {
-            cout << "Pattern Found at the index :" << i-j<<endl;
-            j = lps [j-1];
+            cout << "Pattern Found at the index :" << i - j << endl;
+            j = lps[j - 1];
         }
 
         // mismatch after j matches
-        else if (i<n && pattern[j] != text[i]) 
+        else if (i < n && pattern[j] != text[i])
         {
-            if (j !=0 )
+            if (j != 0)
             {
-                j = lps[j-1];
+                j = lps[j - 1];
             }
             else
             {
@@ -82,14 +82,13 @@ void KunthMorissPrattSearch(string text,string pattern)
             }
         }
     }
-
 }
 
 int main()
 {
-    string text,pattern;
-    cout<< "Enter the text and pattern\n";
-    cin>>text>>pattern;
+    string text, pattern;
+    cout << "Enter the text and pattern\n";
+    cin >> text >> pattern;
 
-    KunthMorissPrattSearch(text,pattern);
+    KunthMorissPrattSearch(text, pattern);
 }
