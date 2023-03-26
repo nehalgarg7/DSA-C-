@@ -15,7 +15,7 @@ using namespace std;
 //     {
 //         if(s[i]!=']')
 //         {
-//             result+=s[i];
+//             result+=s[i]; // ok
 //         }
 //         else
 //         {
