@@ -1,0 +1,73 @@
+References vs Pointers
+Both references and pointers can be used to change the local variables of one function inside another function. Both of them can also be used to save copying of big objects when passed as arguments to functions or returned from functions, to get efficiency gain. Despite the above similarities, there are the following differences between references and pointers.
+
+1. A pointer can be declared as void but a reference can never be void For example
+
+int a = 10;
+void* aa = &a; // it is valid
+void& ar = a;  // it is not valid
+2. The pointer variable has n-levels/multiple levels of indirection i.e. single-pointer, double-pointer, triple-pointer. Whereas, the reference variable has only one/single level of indirection. The following code reveals the mentioned points:  
+
+3. Reference variables cannot be updated.
+
+4. Reference variable is an internal pointer.
+
+5. Declaration of a Reference variable is preceded with the ‘&’ symbol ( but do not read it as “address of”).
+
+// C++ Program to demostrate
+// references and pointers
+#include <iostream>
+using namespace std;
+
+// Driver Code
+int main()
+{
+	// simple or ordinary variable.
+	int i = 10;
+
+	// single pointer
+	int* p = &i;
+
+	// double pointer
+	int** pt = &p;
+
+	// triple pointer
+	int*** ptr = &pt;
+
+	// All the above pointers differ in the value they store
+	// or point to.
+	cout << "i = " << i << "\t"
+		<< "p = " << p << "\t"
+		<< "pt = " << pt << "\t"
+		<< "ptr = " << ptr << '\n';
+
+	// simple or ordinary variable
+	int a = 5;
+	int& S = a;
+	int& S0 = S;
+	int& S1 = S0;
+
+	// All the references do not differ in their
+	// values as they all refer to the same variable.
+	cout << "a = " << a << "\t"
+		<< "S = " << S << "\t"
+		<< "S0 = " << S0 << "\t"
+		<< "S1 = " << S1 << '\n';
+
+	return 0;
+}
+
+Output : i = 10    p = 0x7ffecfe7c07c    pt = 0x7ffecfe7c080    ptr = 0x7ffecfe7c088
+a = 5    S = 5    S0 = 5    S1 = 5
+
+Limitations of References -->
+1. Once a reference is created, it cannot be later made to reference another object; it cannot be reset. This is often done with pointers. 
+2. References cannot be NULL. Pointers are often made NULL to indicate that they are not pointing to any valid thing. 
+3. A reference must be initialized when declared. There is no such restriction with pointers.
+4. Due to the above limitations, references in C++ cannot be used for implementing data structures like Linked List, Tree, etc.
+
+Advantages of using References
+1. Safer: Since references must be initialized, wild references like wild pointers are unlikely to exist. It is still possible to have references that don’t refer to a valid location (See questions 5 and 6 in the below exercise) 
+2. Easier to use: References don’t need a dereferencing operator to access the value. They can be used like normal variables. The ‘&’ operator is needed only at the time of declaration. Also, members of an object reference can be accessed with the dot operator (‘.’), unlike pointers where the arrow operator (->) is needed to access members.
+
+Together with the above reasons, there are a few places like the copy constructor argument where a pointer cannot be used. Reference must be used to pass the argument in the copy constructor. Similarly, references must be used for overloading some operators like ++.
