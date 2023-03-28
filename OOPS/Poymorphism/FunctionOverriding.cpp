@@ -24,7 +24,7 @@ using namespace std;
 
 class Parent{
     public:
-    virtual void print() // using virtual keyword we do run time polymorphism.
+    virtual void print() // using virtual keyword we do run time polymorphism. // Here child class overrides the parent class.
     {
         cout << "This is the parent class print\n";
     }
