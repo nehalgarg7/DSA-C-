@@ -18,7 +18,7 @@ class Rectangle{
         breadth = y;
     }
 
-    Rectangle(Rectangle& r) // Copy constructor - initialise an obj by another existing object
+    Rectangle(Rectangle& r) // Copy constructor - initialise an obj by another existing object // Here we use referencing not pointer because of safe and easy to use reasons.
     {
         length = r.length;
         breadth = r.breadth;
