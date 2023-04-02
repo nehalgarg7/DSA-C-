@@ -21,19 +21,19 @@ void reverse(int a) // T.C = O(digit)
 
 int main()
 {
-    //reverse(12);
-    //cout << s;
+    reverse(12);
+    cout << s;
 
-    int num=0123, result=0; //check notes.(octal,decimal concept)
-    //cin>>num;
+    // int num=0123, result=0; //check notes.(octal,decimal concept)
+    // //cin>>num;
     
-    while(num>0)
-    {
-        int rem = num % 10;
-        result = result *10 + rem;
-        num = num/10;
-    }
+    // while(num>0)
+    // {
+    //     int rem = num % 10;
+    //     result = result *10 + rem;
+    //     num = num/10;
+    // }
 
-    cout << result;
+    // cout << result;
     return 0;
 }
