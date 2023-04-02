@@ -20,7 +20,9 @@ int main()
 {
     stringCreation obj("0123");
     obj.temp();
+    int temp = stoi(obj.s);
     cout << obj.s;
+    cout << temp;
 
     return 0;
 }
