@@ -1,0 +1,5 @@
+Question1: Given the head of a linked list, delete every alternate element from the list starting from the second element.
+Question2: Given the head of a sorted Linked List, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
+Question3: Traverse/Print a Singly linked list in reverse Order. //Note: 1. Here we use recursion. 2. You had already solved it using brute-force approach on leetcode where you reversed the LL not just print is traverserly using 2 pointer approach(from last to frist). Colloge wallah solved it using three pointer approach(frist to last)
+Question4: Reverse a Linked List.(using recursion)
+Question5: Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list.****
