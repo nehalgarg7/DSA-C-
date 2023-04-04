@@ -29,6 +29,5 @@ int f(int i, int j,int m, int n)
 int main()
 {
     cout<<f(0,0,3,2);
-
     return 0;
 }
