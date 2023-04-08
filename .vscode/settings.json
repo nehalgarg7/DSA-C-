@@ -44,6 +44,8 @@
         "forward_list": "cpp",
         "list": "cpp",
         "unordered_set": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "bitset": "cpp",
+        "valarray": "cpp"
     }
 }
