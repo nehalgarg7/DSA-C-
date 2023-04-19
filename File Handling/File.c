@@ -9,7 +9,8 @@ Two Basic Operation to modify files--> Read and Write
 Two important operation which are pre-requites --> open and close
 */
 
-//opening a file
+
+//opening a file 
 /*
 fopen(<filename or path>,<opening-mode>);// return FILE pointer.
 */
