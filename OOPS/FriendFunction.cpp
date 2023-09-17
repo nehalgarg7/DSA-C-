@@ -4,7 +4,7 @@ using namespace std;
 class A{
     int x = 1 ;
 
-    friend void print(A &obj);
+    friend void print(A &obj); // just have to provide the definition of function with friend keyword
 };
 
 void print(A &obj)

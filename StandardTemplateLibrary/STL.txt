@@ -1,0 +1,26 @@
+STL stands for Standard Template Library
+
+- Set of template classes for implementing commonly used data structures and functions.
+
+Ex: vector<int>..
+vector<char>..
+lists,set,map,queue,stack
+
+// 3 Major Components of STL are:
+   1. Containers -> used to hold data of the same type.
+   Ex: Vector -> class that defines a dynamic array
+       List -> class for doubly linked list.
+       Map -> used to store unique key-value pairs.
+       Set -> used to store unique values.
+
+   2. Iterators -> used to iterate/traverse the container.
+   -> pointer like entites.
+
+Ex:
+   vector<int> v={1,2,3,4};
+   vector<int> :: iterator itr;
+   itr.begin()=1;
+
+
+   3. Algorithms-> functions that are used to manipulate data in the Containers.
+   Ex: sort(),min(),max()...
