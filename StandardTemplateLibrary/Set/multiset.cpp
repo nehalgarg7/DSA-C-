@@ -1,7 +1,6 @@
 /**
- * It can store duplicate values. Else remains same.
- *
- * store in ordered manner.
+ * 1. It can store duplicate values. Else remains same.
+ * 2. store in ordered manner.
  * 
  * Member functions of multiset:
  * 1.  insert() => T.C. = O(log N)
@@ -17,7 +16,9 @@
  * ms.find(2) returns first 2 from the left. `@`
  * 
  * 4. count() : no.of occurrences. T.C. = O(k+ log N) {K is the no. of occurrence}
+ * 
  * 5. lower_bound(): iterator pointing to first occurrence of value if present else position of the next greater value. T.C. = O(log N)
+ * 
  * 6. upper_bound(): position of next greater value. T.C. = O(log N)
  */
 

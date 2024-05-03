@@ -81,28 +81,38 @@ int main()
     */
 
     /*
-    
+
     // auto itr2 = set1.begin();
     // advance(itr2, 1);
 
     // set1.erase(itr2);
-    
+
     */
 
-
-    auto strt_itr = set1.begin();
+    // auto strt_itr = set1.begin();
     // auto end_itr = set1.begin();
     // advance (end_itr , 2);
 
-    auto end_itr = set1.end();
-    end_itr--;
+    // auto end_itr = set1.end();
+    // end_itr--;
 
-    set1.erase(strt_itr, end_itr);
+    // set1.erase(strt_itr, end_itr);
 
-    for (auto value : set1)
-    {
-        cout << value << " ";
-    }
+    // for (auto value : set1)
+    // {
+    //     cout << value << " ";
+    // }
+
+    // Member function of a Set Container
+    /**
+     * 1. size(), max_size() -> max no. of elements set can hold.
+     * 2. empty() -> returns true if empty else false.
+     * 3. clear() -> removes all elements from set.
+     * 4. find() -> returns position of elements if present, else returns end iterator.
+     * 5. count() -> returns no. of occurrence of an element.
+     * 6. lower_bound() -> returns element if present, else returns just greater value.
+     * 7. upper_bound() -> return the next greater value.
+    */
 
     return 0;
 }
