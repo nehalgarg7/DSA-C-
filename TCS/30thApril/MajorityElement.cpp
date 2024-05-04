@@ -1,21 +1,27 @@
 #include <bits/stdc++.h>
-#include <set>
+#include <map>
 using namespace std;
 int main()
 {
-    int num;
+    int n;
+    cin >> n;
 
-    multiset<int> ms;
-    vector<int> a;
+    map <int, int> eleCount;
 
-    while (cin >> num)
+    for(int i=0; i<n; i++)
     {
-        a.push_back(num);
-        ms.insert(num);
+        int val;
+        cin >> val;
+
+        eleCount[val]++;
     }
 
-    int n = a.size();
-
-    cout << ms.count(2);
+    for(auto e: eleCount)
+    {
+        if(e.second >= n/2)
+        {
+            cout << e.first << " ";
+        }
+    }
     return 0;
 }
