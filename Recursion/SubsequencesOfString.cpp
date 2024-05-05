@@ -9,7 +9,7 @@ Output: a,b,c,ab,bc,ac,abc.
 #include <bits/stdc++.h>
 using namespace std;
 
-void f(string &str, int i, string result, vector<string> &li)
+void subsequence(string &str, int i, string result, vector<string> &li)
 {
     // base case
     if (i == str.length())
@@ -18,15 +18,15 @@ void f(string &str, int i, string result, vector<string> &li)
         return;
     }
     // recursive case.
-    f(str, i + 1, result + str[i], li);
-    f(str, i + 1, result, li);
+    subsequence(str, i + 1, result + str[i], li);
+    subsequence(str, i + 1, result, li);
 }
 
 int main()
 {
     vector<string> result;
-    string str = "abc";
-    f(str,0,"",result);
+    string str = "abcd";
+    subsequence(str,0,"",result);
     for(int i=0;i<result.size();i++)
     {
         cout<<result[i]<<" ";

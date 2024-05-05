@@ -25,7 +25,7 @@ int maxLengthZeroSumSubarray(vector<int> &v)
     for(int i=0;i<v.size();i++)
     {
         prefixsum += v[i];
-        if(prefixsum == 0)
+        if(prefixsum == 0)  // if all elements are zero.
         {
             maxlen++;
         }
