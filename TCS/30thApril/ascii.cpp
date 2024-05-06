@@ -16,7 +16,16 @@ public:
         cin >> grade;
         cin >> gender;
     }
+
+    void print()
+    {
+        cout << "Hi";
+    }
 };
+
+// objectname.print(); //obejctName.var_name
+
+//obj[0] , obj[1]
 
 int main()
 {

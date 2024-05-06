@@ -25,11 +25,13 @@ void subsequence(string &str, int i, string result, vector<string> &li)
 int main()
 {
     vector<string> result;
-    string str = "abcd";
+    string str = "ab";
     subsequence(str,0,"",result);
     for(int i=0;i<result.size();i++)
     {
         cout<<result[i]<<" ";
     }
+
+    cout << result.size();
     return 0;
 }
