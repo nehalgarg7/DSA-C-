@@ -15,9 +15,29 @@
  * [1,2,3,7,4,5] or {1,2,3,7,4,5} str.erase(str.begin()); str.erase(str.end()-1);
  *
  * Ques: 3 students -> name, age, grade , gender
- * Input: ABC 22 C MALE
- *        XYZ 23 D FEMALE
- *        PQR 24 A MALE
+ * Input: ABC 22 C MALE  // i=0
+ *        XYZ 23 D FEMALE // i=1
+ *        PQR 24 A MALE   // i=2
+ * 
+ * {ABC,22,C,MALE},{XYZ,23,D,FEMALE},{PQR,24,A,MALE} 
+ *          
+ * 
+ * cin >> n;
+ * 
+ * int avg = 0;
+ * for(int i=0; i<n;i++)
+ * {
+ * 
+ *  string name;
+ * int age;
+ * char id;
+ * string gender;
+ *  cin >> name >> age >> id >> gender;
+ * 
+ * avg += age;
+ * }
+ * 
+ * avg /= n;
  *
  * Find out ? Avg age ? Number of female
  */
@@ -89,7 +109,16 @@ int main()
      *
      */
 
-    string str = "112,2,3,4"; //"112 2 3 4", "112,2,3,4"
+
+
+    /*
+    string str = "112,2,3,4"; 
+    
+    //getline(cin , str);
+    
+    //"112 2 3 4", "112,2,3,4" "[112,2,3,4]"
+    //str.erase(str.begin());
+    //str.erase(str.end()-1);
 
     vector<int> nums;
     string temp = "";
@@ -115,6 +144,9 @@ int main()
     {
         cout << ele << " ";
     }
+    */
+
+
 
     return 0;
 }

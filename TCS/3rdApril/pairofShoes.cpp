@@ -8,7 +8,7 @@ int main()
     int size, count=0;
     cin >> size;
     
-    unordered_map<int, int> leftshoes, rightshoes;
+    map<int, int> leftshoes, rightshoes;
     
     for(int i=0; i<size; i++)
     {

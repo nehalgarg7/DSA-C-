@@ -1,0 +1,112 @@
+// Sub - array
+
+1 2 3 4 5 
+
+// all possible subaaray 
+
+vector<vector<int>> subaaray; //2-d vector 
+
+//push
+for(int i=0; i<nums.size(); i++)
+{  
+    for(int j=i; j<nums.size(); j++)
+    {
+        temp.push_back(nums[j]);
+        subaaray.push_back(temp);
+    }
+}
+
+//access
+for(int i=0; i<subaaray.size(); i++)
+{
+    for(int j=0; j<subaaray[i].size(); j++)
+    {
+        subaaray[i][j];
+    }
+}
+
+sum 5 6 8 5 6 1 2 //unique  set<int> s;
+
+//common map <int,int> count; count[sum]++ 
+        key -> value
+
+for(auto ele: count)
+{
+    if(ele.second > 1 )
+    {
+        cout << ele.first << " ";
+    }
+}
+
+for(auto ele: s)
+{
+    cout << ele << " ";
+}
+
+
+1 2 3 
+
+1
+12
+123
+2
+23
+3
+
+
+1 2 3 
+//sum
+
+for(int i=0; i<nums.size(); i++)
+{
+    vector <int> temp;
+    int sum = 0;
+    for(int j=i; j<nums.size(); j++)
+    {
+        temp.push_back(nums[j]);
+        sum += nums[j];
+
+        if(sum == 5)
+        {
+            counter++;
+        }
+    }
+    temp = ""
+}
+
+cout << counter;
+i = 0 
+    temp = "";
+    j = 0 
+    temp = 1;
+    j = 1
+    temp 1 2
+    j= 2
+    temp 1 2 3
+
+i = 1
+ temp = 
+  j = 1
+  temp =  2
+  j = 2
+ temp =  2 3 
+
+ 1 2 3
+ [
+    [1] , [1,2] , [1,2,3] , [2] , [2,3] , [3] 
+ ]
+
+ find out all possible subaaray of a given array 
+
+ vector<vector<int>> subaaray;
+
+ Q1. missing number
+
+ 1 2 3 4  8 9
+
+ 1 4 2 3 9 8 
+
+ while(cin >> num)
+ {
+    
+ }

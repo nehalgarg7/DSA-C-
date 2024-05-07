@@ -1,5 +1,5 @@
 /**
- * Input: ABC 22 C MALE  
+ * Input: ABC,22,C,MALE   vector<string> nums;
  *        XYZ 23 D FEMALE 
  *        PQR 24 A MALE 
 */

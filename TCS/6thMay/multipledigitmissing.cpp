@@ -23,6 +23,8 @@ set<int> anotherApproach(vector<int> arr)
     }
 
     return s;
+
+    //T.C = O(n logn)
 }
 
 int main()

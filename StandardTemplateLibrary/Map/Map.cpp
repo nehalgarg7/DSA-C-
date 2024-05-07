@@ -3,6 +3,29 @@
  * 2. The elements are stored in ascending (by default) or descending order.
  * 3. Maps cannot have duplicate keys.
  * 4. Maps are implemented through BST.
+ * 5. Updation of value corresponding to its key is allowed.
+ * 
+ * 
+ * Member Functions:
+ * 1. Erase:
+ * 
+ * m.erase(iterator)
+ * m.erase(key)
+ * m.erase(start_itr, end_itr)
+ * 
+ * 2. swap() -> If two maps M1 and M2 have same datatype {Key & Value both} then we can swap the both maps.
+ * 
+ * M1.swap(M2); swap(M1,M2);
+ * 
+ * 3. clear() -> m.clear() {delete all the elements from the map}
+ * 4. empty() -> m.empty() {return if empty or not}
+ * 5. size() -> m.size() {return size of map}
+ * 6. max_size()
+ * 7. find() -> m.find(key) {returns itr to element if present, else it returns map.end() itr}.
+ * 8. count() -> m.count(key) {return the number of count.} Always return 0 or 1.
+ * 
+ * 9. upper_bound() -> returns an itr to next greater element.
+ * 10. lower_bound() -> returns an itr to element itself if present else itr to next greater element.
  */
 #include <bits/stdc++.h>
 #include <iostream>
