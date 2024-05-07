@@ -7,6 +7,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+set<int> anotherApproach(vector<int> arr)
+{
+    sort(arr.begin(),arr.end());
+    set<int> s;
+
+    for(int i=arr[0]; i<=arr[arr.size()-1]; i++)
+    {
+        s.insert(i);
+    }
+
+    for(int i= 0; i<arr[arr.size()-1]; i++)
+    {
+        s.erase(arr[i]);
+    }
+
+    return s;
+}
+
 int main()
 {
     int num;
@@ -41,5 +59,14 @@ int main()
 
     // T.C = O(n^2)
 
+    cout << endl;
+    cout << "Another Approach: " ;
+
+    set<int> result = anotherApproach(arr);
+
+    for(auto ele: result)
+    {
+        cout << ele << " ";
+    }
     return 0;
 }
